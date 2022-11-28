@@ -29,4 +29,4 @@ Other Notes:
 * Found an API to get RateMyProfessor data, and got it to work initally
 * We will likely work on the project next week, finishing it by midnight on Thursday
 
-## Meeting 3: 12/06 @ 7:00 PM
+## Meeting 3: 12/06 @ 7PM

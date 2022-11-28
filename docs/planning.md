@@ -24,6 +24,7 @@ Assigning out roles for major components of the project:
 * Frontend - Ryan
 * Documentation and Demo Video - all shared, whoever works on a component can add the documentation
 
+Other Notes:
 * Looked at new requirements for project
 * Found an API to get RateMyProfessor data, and got it to work initally
 * We will likely work on the project next week, finishing it by midnight on Thursday

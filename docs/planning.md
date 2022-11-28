@@ -17,4 +17,13 @@ API which returns information from RateMyProfessor (via scraping?), returns prof
 * Backend: having a scraper for RateMyProfessor, API runs the scraper function and has endpoints to retrieve professor information by name/professor ID
 * Frontend: user enters courses, difficulty and quality of schedule is computed
 
-## Meeting 2: 11/27 @ 7PM
+## Meeting 2: 11/27 @ 8:30 PM
+Assigning out roles for major components of the project:
+* server.js and API Backend - Shriya
+* Databases - Lesli
+* Frontend - Ryan
+* Documentation and Demo Video - all shared, whoever works on a component can add the documentation
+
+* Looked at new requirements for project
+* Found an API to get RateMyProfessor data, and got it to work initally
+* We will likely work on the project next week, finishing it by midnight on Thursday

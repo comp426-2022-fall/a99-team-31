@@ -2,25 +2,25 @@
   "name": "final-project-team-31",
   "version": "1.0.0",
   "description": "Final Project for Team 31",
-  "main": "index.js",
+  "main": "serverjs.js",
   "directories": {
     "doc": "docs",
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test": "node server.js --port=3000"
   },
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shriyamandal/a99-team-31-shriya.git"
+    "url": "git+https://github.com/comp426-2022-fall/a99-team-31.git"
   },
   "author": "Team 31",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/shriyamandal/a99-team-31-shriya/issues"
+    "url": "https://github.com/comp426-2022-fall/a99-team-31/issues"
   },
-  "homepage": "https://github.com/shriyamandal/a99-team-31-shriya#readme",
+  "homepage": "https://github.com/comp426-2022-fall/a99-team-31#readme",
   "dependencies": {
     "@mtucourses/rate-my-professors": "^2.2.0",
     "body-parser": "^1.20.1",

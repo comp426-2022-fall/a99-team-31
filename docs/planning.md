@@ -30,3 +30,7 @@ Other Notes:
 * We will likely work on the project next week, finishing it by midnight on Thursday
 
 ## Meeting 3: 12/06 @ 7PM
+* Dicussed finished backend
+* Will now be working on database and frontend until Thursday afternoon
+* Looked at further requirements for the project and what we need to add to our API and frontend
+* Will be doing documentation and demo video on final meeting Thursday 12/08

@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "test": "node server.js --port=3000"
+    "test": "node server.js --port=3000"
   },
   "type": "module",
   "repository": {

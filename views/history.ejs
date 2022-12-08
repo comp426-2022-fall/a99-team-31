@@ -11,19 +11,21 @@
         </style>
   </head>
   <body class="text-box">
-    <h1>Log History:</h1>
+    <h1>Rate My Semester</h1>
+    <h2>Log History:</h2>
 
     <ul>
       <% data.forEach(function(dat) { %>
           User: <%= dat.user %>
-          <br>
-          Message: <%= dat.message%>
           <br>
           Date: <%= dat.time%>
           <br>
           <br>
       <% }); %>
     </ul>
+    <form action="/app">
+        <input type="submit" value="Return Home" class="base-btn"/>
+    </form>
   </body>
 
 </html>

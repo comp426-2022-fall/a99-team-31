@@ -3,6 +3,8 @@
 import { getTeachers, computeDifficulty, computeRating } from './lib/rmp.js';
 import express from "express";
 import minimist from "minimist";
+import path from 'path';
+import {fileURLToPath} from 'url';
 import bodyParser from "body-parser";
 
 const app = express();
@@ -11,11 +13,14 @@ app.use(express.urlencoded({ extended: true }));
 const args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/app', (req, res) => {
-    res.status(200).send('200 OK');
+    res.render('home');
   })
 
 app.get('/app/ratings/', async(req, res) => {

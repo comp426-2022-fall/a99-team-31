@@ -42,8 +42,6 @@ const __dirname = path.dirname(__filename);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-var rating = "";
-var difficulty = "";
 
 app.get('/app/', (req, res) => {
   const timeElapsed = Date.now();
@@ -142,17 +140,36 @@ app.get('/app/login/delete', (req,res) =>{
   res.render('deleted');
 })
 
-app.get('/app/login/ratings/', async(req, res) => {
-    rating = await computeRating();
-    const teacherList = ["kris jordan", "john martin", "brent munsell", "ketan mayer patel"]
+app.post('/app/login/ratings/', async(req, res) => {
+    const t1 = req.body.t1;
+    const t2 = req.body.t2;
+    const t3 = req.body.t3;
+    const t4 = req.body.t4;
+    const t5 = req.body.t5;
+    const all = t1 + "+" + t2 + "+" + t3 + "+" + t4 + "+" + t5;
+    var teachersArr = (all).split("+");
+
+    for (let i = 0; i < teachersArr.length; i++) {
+	    teachersArr[i] = teachersArr[i].replaceAll( '-',' ');
+	  }
+	
+    let rating = await computeRating(teachersArr);
+    
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     let user = req.app.get('user')
-    const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed rating for predetermined proffessors', '${today.toISOString()}');`;
+    const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed rating for user professors', '${today.toISOString()}');`;
     db.exec(stmt1)
-    const stmt2 = `INSERT INTO data (user, teachers, ratings) VALUES ('${user}', '${teacherList}', '${rating}');`;
+    const stmt2 = `INSERT INTO data (user, teachers, rating) VALUES ('${user}', '${teachersArr}', '${rating}');`;
     db.exec(stmt2)
-    res.send(rating);
+    let difficulty = await computeDifficulty(teachersArr);
+    const stmt3 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed difficulty for user professors', '${today.toISOString()}');`;
+    db.exec(stmt3)
+    const stmt4 = `INSERT INTO data (user, teachers, difficulty) VALUES ('${user}', '${teachersArr}', '${difficulty}');`;
+    db.exec(stmt4)
+    const truerating = rating.averageRating;
+    const truedifficulty = difficulty.averageDifficulty;
+    res.render('ratings', {rating: truerating, difficulty: truedifficulty});
 })
 
 app.get('/app/login/ratings/:teachers/', async(req, res) => {

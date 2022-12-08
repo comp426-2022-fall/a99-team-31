@@ -33,8 +33,16 @@ app.get('/app/newacc/', (req, res) => {
   /*res.render('create-succ');*/
 })
 
-app.get("/app/login/history/", (req,res) => {
+app.get('/app/login/history/', (req,res) => {
   res.render('history');
+})
+
+app.get('/app/login/acc/', (req,res) => {
+  res.render('acc');
+})
+
+app.get('/app/login/delete', (req,res) =>{
+  res.render('deleted');
 })
 
 app.get('/app/login/ratings/', async(req, res) => {

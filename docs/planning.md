@@ -43,3 +43,12 @@ This was an unscheduled meeting we decided to have to update each other on the p
 * Mitigated issues with styling not showing up
 * Discussed features we would add to the database, such as username, password, logs of interactions
 * Discussed pages to be added to the frontend and how we would request information from the API from the frontend
+
+## Meeting 4: 12/08 @ 3pm
+This is the final meeting for our team. Going into this meeting, we were mostly done with the technical aspects of the project, and only needed to fix a couple of things. 
+* Solved some issues such as the database not deleting users properly, added form to change username and password
+* Connected frontend to backend and databases properly  
+* Added thorough documentation for each of our parts including the API and user interactions
+* Added comments for each of our code
+* Tested out the application and made sure we met the rubric on each criteria
+* Filmed demo video

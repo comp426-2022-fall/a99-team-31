@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>History</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            body {
-              background-color: #7BAFD4;
-            }
-            </style>
-    </head>
-    <body>
-        <div class="textbox">
-            <h1>Rate My Semester</h1>
-            <h2>Your History</h2>
-            <!--This is where the database will show the information-->
-            <form action="/app/login">
-                <input type="submit" value="Return Home" class="base-btn"/>
-            </form>
-        </div>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Logs</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+          background-color: #7BAFD4;
+        }
+        </style>
+  </head>
+  <body class="text-box">
+    <h1>Log History:</h1>
+
+    <ul>
+      <% data.forEach(function(dat) { %>
+          User: <%= dat.user %>
+          <br>
+          Message: <%= dat.message%>
+          <br>
+          Date: <%= dat.time%>
+          <br>
+          <br>
+      <% }); %>
+    </ul>
+  </body>
+
 </html>

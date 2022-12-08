@@ -42,6 +42,9 @@ const __dirname = path.dirname(__filename);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+var rating = "";
+var difficulty = "";
+
 app.get('/app/', (req, res) => {
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
@@ -51,7 +54,7 @@ app.get('/app/', (req, res) => {
   res.render('home');
 })
 
-app.get('/app/login/', (req, res) => {
+app.post('/app/login', (req, res) => {
     /*res.render('login-fail');*/
     const user = req.body.username;
     const pass = req.body.password;
@@ -78,7 +81,7 @@ app.get('/app/login/', (req, res) => {
     
 })
 
-app.get('/app/newacc/', (req, res) => {
+app.post('/app/newacc', (req, res) => {
     const user = req.body.username;
     const pass = req.body.password;
     const timeElapsed = Date.now();
@@ -140,7 +143,7 @@ app.get('/app/login/delete', (req,res) =>{
 })
 
 app.get('/app/login/ratings/', async(req, res) => {
-    let rating = await computeRating();
+    rating = await computeRating();
     const teacherList = ["kris jordan", "john martin", "brent munsell", "ketan mayer patel"]
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);

@@ -217,64 +217,6 @@ app.post('/app/login/ratings/', async(req, res) => {
     res.render('ratings', {rating: truerating, difficulty: truedifficulty});
 })
 
-app.get('/app/login/ratings/:teachers/', async(req, res) => {
-    var teachersArr = (req.params.teachers).split("+");
-
-    for (let i = 0; i < teachersArr.length; i++) {
-	    teachersArr[i] = teachersArr[i].replaceAll( '-',' ');
-	  }
-	
-    let rating = await computeRating(teachersArr);
-    
-    const timeElapsed = Date.now();
-    const today = new Date(timeElapsed);
-    let user = req.app.get('user')
-    // Add interaction to logs database, given the username and time
-    const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed rating for user professors', '${today.toISOString()}');`;
-    db.exec(stmt1)
-    // Add the rating information to the users row in the 'data' database
-    const stmt2 = `INSERT INTO data (user, teachers, rating) VALUES ('${user}', '${teachersArr}', '${rating}');`;
-    db.exec(stmt2)
-    res.send(rating);
-  })
-
-app.get('/app/login/difficulty/', async(req, res) => {
-    let difficulty = await computeDifficulty();
-    const teacherList = ["kris jordan", "john martin", "brent munsell", "ketan mayer patel"]
-    const timeElapsed = Date.now();
-    const today = new Date(timeElapsed);
-    let user = req.app.get('user')
-    // Add interaction to logs database, given the username and time
-    const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed difficulty of predetermined professors', '${today.toISOString()}');`;
-    db.exec(stmt1)
-    // Add the difficulty information to the users row in the 'data' database
-    const stmt2 = `INSERT INTO data (user, teachers, difficulty) VALUES ('${user}', '${teacherList}', '${difficulty}');`;
-    db.exec(stmt2)
-    res.send(difficulty);
-})
-
-app.get('/app/login/difficulty/:teachers/', async(req, res) => {
-    var teachersArr = (req.params.teachers).split("+");
-
-    for (let i = 0; i < teachersArr.length; i++) {
-	teachersArr[i] = teachersArr[i].replaceAll( '-',' ');
-	}
-	
-    let difficulty = await computeDifficulty(teachersArr);
-
-    const timeElapsed = Date.now();
-    const today = new Date(timeElapsed);
-    let user = req.app.get('user')
-    // Add interaction to logs database, given the username and time
-    const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed difficulty for user professors', '${today.toISOString()}');`;
-    db.exec(stmt1)
-    // Add the difficulty information to the users row in the 'data' database
-    const stmt2 = `INSERT INTO data (user, teachers, difficulty) VALUES ('${user}', '${teachersArr}', '${difficulty}');`;
-    db.exec(stmt2)
-  
-    res.send(difficulty);
-  })
-
 app.get("*",(req, res) => {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <!-- Header with document name and background color -->
         <title>Account Info</title>
         <link rel="stylesheet" href="styles.css">
         <style>
@@ -12,12 +13,14 @@
     <body>
         <div class="textbox">
             <h1>Rate My Semester</h1>
+            <!-- Displays current account info -->
             <h2>Your Account Info</h2>
             <h3>Your Username: <%= user%></h3>
             <h3>Your Password: <%= pass%></h3>
             <form action="/app/">
                 <input type="submit" value="Return Home" class="base-btn"/>
             </form>
+            <!-- User inputs 3 parameters to update their account information, current username, new username, and new password -->
             <form method="post" action="/app/login/acc/update">
                 <p>
                     <label for="username">Current Username</label>

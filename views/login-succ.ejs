@@ -17,6 +17,7 @@
     <h2>Welcome to Your Homepage!</h2>
     <h3>Here you can view a new semester's professor rating and difficulty, or view your history! </h3>
     <div>
+      <!-- Allows user to make a new semester by taking in 5 teacher parameters and directing you to the ratings page -->
       <h3>View Semester Rating</h3>
       <form method="post" action="/app/login/ratings/">
         <p>
@@ -45,15 +46,18 @@
         <div>
           <h3>Manage Your Account</h3>
         </div>
+        <!-- Button to view user history -->
       </form>
       <form action="/app/login/history/">
         <input type="submit" value="View History" class="btn" style="margin: 0px;" />
       </form>
+      <!-- Button to view user account details -->
       <div>&nbsp;</div>
       <form action="/app/login/acc">
         <input type="submit" value="Account Details" class="btn" style="margin: 0px;" />
       </form>
       <div>&nbsp;</div>
+      <!-- Button to logout -->
       <form action="/app">
         <input type="submit" value="Logout" class="btn" style="margin: 0px;" />
       </form>

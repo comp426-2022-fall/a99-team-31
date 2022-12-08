@@ -158,6 +158,7 @@ app.get('/app/login/delete', (req,res) =>{
   const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user1}', 'deleted account', '${today.toISOString()}');`;
   db.exec(stmt1)
 
+<<<<<<< HEAD
   const user = req.body.username;
   const pass = req.body.password;
   // Delete the users data from 'data' database
@@ -165,6 +166,12 @@ app.get('/app/login/delete', (req,res) =>{
   db.exec(stmt2)
   // Delete user from 'users' database
   const stmt = `DELETE FROM users WHERE user='${user}' and pass='${pass}';`;
+=======
+  let user = req.app.get('user')
+  const stmt2 = `DELETE FROM data WHERE user='${user}';`;
+  db.exec(stmt2)
+  const stmt = `DELETE FROM users WHERE user='${user}';`;
+>>>>>>> 266eea84b652d7a92f23d279fc0e8ca08017b78d
   db.exec(stmt)
   
   res.render('deleted');

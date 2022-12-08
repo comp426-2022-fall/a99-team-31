@@ -132,10 +132,11 @@ app.get('/app/login/delete', (req,res) =>{
 
   const user = req.body.username;
   const pass = req.body.password;
-  const stmt = `DELETE FROM users WHERE user='${user}' and pass='${pass}';`;
-  db.exec(stmt)
   const stmt2 = `DELETE FROM data WHERE user='${user}';`;
   db.exec(stmt2)
+  const stmt = `DELETE FROM users WHERE user='${user}' and pass='${pass}';`;
+  db.exec(stmt)
+  
   res.render('deleted');
 })
 

@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 const args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.get('/app', (req, res) => {
     res.status(200).send('200 OK');
   })

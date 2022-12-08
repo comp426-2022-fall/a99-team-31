@@ -13,8 +13,18 @@ body{
     text-align: center;
 }
     .text-box h1{
-        font-size: 45px;
-        color: #e7d8df;
+        font-size: 40px;
+        color: #3ec777;
+        font-family: Arial;
+    }
+    .text-box h2{
+        font-size: 25px;
+        color: #213f97;
+        font-family: Arial;
+    }
+    .text-box h3{
+        font-size: 18px;
+        color: #9c6f35;
         font-family: Arial;
     }
 

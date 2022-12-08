@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login Failed</title>
+    <title>Login Success</title>
     <link rel="stylesheet" href="styling.css">
   </head>
   <body>
     <div class="text-box" style="top: 20%;">
         <h1>Rate My Semester</h1>
-        <h2>Login Failed- Credentials Not Found</h2>
-        <form action="/">
-            <input type="submit" value="Return to Login Page" class="base-btn" style="margin: 10px;"/>
-        </form>
+        <h2>Welcome to Your Homepage!</h2>
+        <h3>Here you can view a new semester difficulty or view your history</h3>
+        <div>
+            <h3>View Semester Rating</h3>
+            <form method="post" action="/app/login/ratings">
+                <p>
+                  <label for="username">Teacher 1</label>
+                  <input type="text" name="Teacher 1" id="Teacher 1">
+                </p>
+                <p>
+                    <label for="username">Teacher 2</label>
+                    <input type="text" name="Teacher 2" id="Teacher 1">
+                  </p>
+                <p>
+                    <label for="username">Teacher 3</label>
+                    <input type="text" name="Teacher 3" id="Teacher 1">
+                  </p>
+                <p>
+                    <label for="username">Teacher 4</label>
+                    <input type="text" name="Teacher 4" id="Teacher 1">
+                  </p>
+                <p>
+                    <label for="username">Teacher 5</label>
+                    <input type="text" name="Teacher 5" id="Teacher 1">
+                  </p>
+                <p>
+                  <input type="submit" value="View Semester" class="base-btn">
+                </p>
+              </form>
+            <form action="/app/login/history">
+                <input type="submit" value="View History" class="base-btn" style="margin: 20px;"/>
+            </form>
+            <form action="/app">
+                <input type="submit" value="Logout" class="base-btn" style="margin: 20px;"/>
+            </form>
+        </div>
     </div>
   </body>
 </html>

@@ -24,14 +24,19 @@ app.get('/app', (req, res) => {
   })
 
 app.get('/app/login', (req, res) => {
-    res.render('login-fail');
-    /*res.render('login-succ')*/
+    /*res.render('login-fail');*/
+    res.render('login-succ')
 })
 
 app.get('/app/newacc', (req, res) => {
   res.render('create-fail');
   /*res.render('create-succ');*/
 })
+
+app.get("/app/login/history", (req,res) => {
+  res.render('history');
+})
+
 app.get('/app/login/ratings/', async(req, res) => {
     let rating = await computeRating();
     res.send(rating);

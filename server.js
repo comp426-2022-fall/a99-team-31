@@ -147,8 +147,8 @@ app.post('/app/login/ratings/', async(req, res) => {
     const t4 = req.body.t4;
     const t5 = req.body.t5;
     const all = t1 + "+" + t2 + "+" + t3 + "+" + t4 + "+" + t5;
+    console.log(all);
     var teachersArr = (all).split("+");
-
     for (let i = 0; i < teachersArr.length; i++) {
 	    teachersArr[i] = teachersArr[i].replaceAll( '-',' ');
 	  }

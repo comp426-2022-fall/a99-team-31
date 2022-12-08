@@ -23,6 +23,11 @@ app.get('/app', (req, res) => {
     res.render('home');
   })
 
+app.get('/app/login', (req, res) => {
+    res.render('login-fail')
+    /*res.render('login-succ')*/
+})
+
 app.get('/app/ratings/', async(req, res) => {
     let rating = await computeRating();
     res.send(rating);

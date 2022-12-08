@@ -139,22 +139,36 @@ app.get('/app/login/delete', (req,res) =>{
   db.exec(stmt2)
   res.render('deleted');
 })
-
 app.post('/app/login/ratings/', async(req, res) => {
     const t1 = req.body.t1;
     const t2 = req.body.t2;
     const t3 = req.body.t3;
     const t4 = req.body.t4;
     const t5 = req.body.t5;
-    const all = t1 + "+" + t2 + "+" + t3 + "+" + t4 + "+" + t5;
-    console.log(all);
-    var teachersArr = (all).split("+");
-    for (let i = 0; i < teachersArr.length; i++) {
-	    teachersArr[i] = teachersArr[i].replaceAll( '-',' ');
-	  }
-	
+
+    var teachersArr = []
+
+    if (t1.length>0) {
+      teachersArr.push(t1)
+    }
+
+    if (t2.length>0) {
+      teachersArr.push(t2)
+    }
+
+    if (t3.length>0) {
+      teachersArr.push(t3)
+    }
+
+    if (t4.length>0) {
+      teachersArr.push(t4)
+    }
+
+    if (t5.length>0) {
+      teachersArr.push(t5)
+    }
+
     let rating = await computeRating(teachersArr);
-    
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     let user = req.app.get('user')

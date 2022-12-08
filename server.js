@@ -110,9 +110,9 @@ app.get('/app/login/history/', (req,res) => {
     let user = req.app.get('user')
     const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'viewed history', '${today.toISOString()}');`;
     db.exec(stmt1)
-    const row = db.prepare(`SELECT * FROM data WHERE user = '${req.app.get('user')}';`);
+    const row = db.prepare(`SELECT * FROM logs WHERE user = '${req.app.get('user')}';`);
     let all = row.all();
-    res.render('history', {data: all});
+    res.render('history', {logs: all});
 })
 
 app.get('/app/login/acc/', (req,res) => {

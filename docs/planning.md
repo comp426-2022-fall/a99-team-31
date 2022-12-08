@@ -3,6 +3,8 @@ A detailed breakdown of our planning process.
 ## Meeting 1: 11/20 @ 7PM
 [Link to discussion post](https://github.com/orgs/comp426-2022-fall/teams/group-31/discussions/2)
 
+This is the first time we got together and we figured out requirements as well as our project idea: Rate My Semester. 
+
 Requirements:
 
 * Documentation of planning
@@ -26,11 +28,18 @@ Assigning out roles for major components of the project:
 
 Other Notes:
 * Looked at new requirements for project
-* Found an API to get RateMyProfessor data, and got it to work initally
+* Shriya found a package on npmjs.com to get RateMyProfessor data, and got it to work 
+[Here is the package we're using](https://www.npmjs.com/package/@mtucourses/rate-my-professors)
 * We will likely work on the project next week, finishing it by midnight on Thursday
 
 ## Meeting 3: 12/06 @ 7PM
-* Dicussed finished backend
-* Will now be working on database and frontend until Thursday afternoon
+* Dicussed finished backend and Shriya showed a demo of how to use the API 
+* Lesli and Ryan now be working on database and frontend until Thursday afternoon
 * Looked at further requirements for the project and what we need to add to our API and frontend
 * Will be doing documentation and demo video on final meeting Thursday 12/08
+
+## Meeting 3: 12/07 @ 10PM
+This was an unscheduled meeting we decided to have to update each other on the progress of each of our components, as well as figure out any issues with the database or frontend.
+* Mitigated issues with styling not showing up
+* Discussed features we would add to the database, such as username, password, logs of interactions
+* Discussed pages to be added to the frontend and how we would request information from the API from the frontend

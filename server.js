@@ -32,12 +32,12 @@ app.get('/app/newacc', (req, res) => {
   res.render('create-fail');
   /*res.render('create-succ');*/
 })
-app.get('/app/ratings/', async(req, res) => {
+app.get('/app/login/ratings/', async(req, res) => {
     let rating = await computeRating();
     res.send(rating);
 })
 
-app.get('/app/ratings/:teachers/', async(req, res) => {
+app.get('/app/login/ratings/:teachers/', async(req, res) => {
     var teachersArr = (req.params.teachers).split("+");
 
     for (let i = 0; i < teachersArr.length; i++) {
@@ -48,12 +48,12 @@ app.get('/app/ratings/:teachers/', async(req, res) => {
     res.send(rating);
   })
 
-app.get('/app/difficulty/', async(req, res) => {
+app.get('/app/login/difficulty/', async(req, res) => {
     let difficulty = await computeDifficulty();
     res.send(difficulty);
 })
 
-app.get('/app/difficulty/:teachers/', async(req, res) => {
+app.get('/app/login/difficulty/:teachers/', async(req, res) => {
     var teachersArr = (req.params.teachers).split("+");
 
     for (let i = 0; i < teachersArr.length; i++) {

@@ -19,21 +19,21 @@ const __dirname = path.dirname(__filename);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/app', (req, res) => {
+app.get('/app/', (req, res) => {
     res.render('home');
   })
 
-app.get('/app/login', (req, res) => {
+app.get('/app/login/', (req, res) => {
     /*res.render('login-fail');*/
     res.render('login-succ')
 })
 
-app.get('/app/newacc', (req, res) => {
+app.get('/app/newacc/', (req, res) => {
   res.render('create-fail');
   /*res.render('create-succ');*/
 })
 
-app.get("/app/login/history", (req,res) => {
+app.get("/app/login/history/", (req,res) => {
   res.render('history');
 })
 

@@ -128,14 +128,14 @@ app.post('/app/login/acc/update/', (req,res) => {
   //Need to update the 'current' user to user with name 'username' and change password to 'password'
   const curruser = req.body.current;
   const username = req.body.username;
-  const password = req.body.password;
+  const pass = req.body.password;
 
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
   let user = req.app.get('user')
   const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'updated account', '${today.toISOString()}');`;
   db.exec(stmt1)
-  const stm2 = `UPDATE users SET user = '${username}' WHERE user = '${curruser}' and pass='${pass}';`;
+  const stm2 = `UPDATE users SET user = '${username}', pass = '${pass}' WHERE user = '${curruser}';`;
   db.exec(stm2)
   res.render('update', {user: req.app.get('user'), pass: req.app.get('pass')});
 })

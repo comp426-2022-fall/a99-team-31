@@ -6,6 +6,24 @@ import minimist from "minimist";
 import path from 'path';
 import {fileURLToPath} from 'url';
 import bodyParser from "body-parser";
+import Database from "better-sqlite3"
+
+const db = new Database('user.db');
+db.pragma('journal_mode = WAL');
+
+const stmt = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='user';`)
+let row = stmt.get();
+if(row == undefined) {
+  console.log('User database appears to be empty. Creating user database...')
+
+  const sqlInit = `
+      CREATE TABLE user (
+        username TEXT PRIMARY KEY,
+        password TEXT);`;
+  db.exec(sqlInit)
+} else {
+  console.log('User database exists.')
+}
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));

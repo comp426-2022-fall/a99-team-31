@@ -91,6 +91,7 @@ app.get('/app/newacc/', (req, res) => {
 
     if (row === undefined) {
         const stmt = `INSERT INTO users (user, pass) VALUES ('${user}', '${pass}');`;
+        const stmt2 = `INSERT INTO data (user) VALUES ('${user}');`;
         db.exec(stmt)
         res.render('create-succ')
         //res.redirect('/app/login/acc/');
@@ -131,20 +132,22 @@ app.get('/app/login/delete', (req,res) =>{
 
   const user = req.body.username;
   const pass = req.body.password;
-  const stmt = `DELETE FROM users WHERE user='${user}' and pass='${pass}';`
+  const stmt = `DELETE FROM users WHERE user='${user}' and pass='${pass}';`;
   db.exec(stmt)
+  const stmt2 = `DELETE FROM data WHERE user='${user}';`;
+  db.exec(stmt2)
   res.render('deleted');
 })
 
 app.get('/app/login/ratings/', async(req, res) => {
     let rating = await computeRating();
-
+    const teacherList = ["kris jordan", "john martin", "brent munsell", "ketan mayer patel"]
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     let user = req.app.get('user')
     const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed rating for predetermined proffessors', '${today.toISOString()}');`;
     db.exec(stmt1)
-    const stmt2 = `INSERT INTO data (user, ratings) VALUES ('${user}', '${rating}');`;
+    const stmt2 = `INSERT INTO data (user, teachers, ratings) VALUES ('${user}', '${teacherList}', '${rating}');`;
     db.exec(stmt2)
     res.send(rating);
 })
@@ -170,15 +173,14 @@ app.get('/app/login/ratings/:teachers/', async(req, res) => {
 
 app.get('/app/login/difficulty/', async(req, res) => {
     let difficulty = await computeDifficulty();
-
+    const teacherList = ["kris jordan", "john martin", "brent munsell", "ketan mayer patel"]
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     let user = req.app.get('user')
     const stmt1 = `INSERT INTO logs (user, message, time) VALUES ('${user}', 'computed difficulty of predetermined proffessors', '${today.toISOString()}');`;
     db.exec(stmt1)
-    const stmt2 = `INSERT INTO data (user, difficulty) VALUES ('${user}', '${difficulty}');`;
+    const stmt2 = `INSERT INTO data (user, teachers, difficulty) VALUES ('${user}', '${teacherList}', '${difficulty}');`;
     db.exec(stmt2)
-    res.send(rating);
     res.send(difficulty);
 })
 
@@ -198,7 +200,7 @@ app.get('/app/login/difficulty/:teachers/', async(req, res) => {
     db.exec(stmt1)
     const stmt2 = `INSERT INTO data (user, teachers, difficulty) VALUES ('${user}', '${teachersArr}', '${difficulty}');`;
     db.exec(stmt2)
-    res.send(rating);
+  
     res.send(difficulty);
   })
 

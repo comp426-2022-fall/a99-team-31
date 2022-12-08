@@ -18,6 +18,23 @@
             <form action="/app/">
                 <input type="submit" value="Return Home" class="base-btn"/>
             </form>
+            <form method="post" action="/app/login/acc/update">
+                <p>
+                    <label for="username">Current Username</label>
+                    <input type="text" name="current" id="current">
+                  </p>
+                <p>
+                  <label for="username">New Username</label>
+                  <input type="text" name="username" id="username">
+                </p>
+                <p>
+                  <label for="password">New Password</label>
+                  <input type="text" name="password" id="password">
+                </p>
+                <p>
+                  <input type="submit" value="Update Account" class="base-btn">
+                </p>
+              </form>
             <form action="/app/login/delete">
                 <input type="submit" value="Delete Account" class="base-btn"/>
             </form>

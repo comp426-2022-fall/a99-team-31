@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="styling.css">
+    </head>
+
+    <body>
+        <div class = "text-box">
+            <h1>Welcome to Rate My Semester!</h1>
+            <h2>Please login or create a new account</h2>
+            <h3>Login</h3>
+            <form method="post" action="/login">
+                <p>
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username">
+                </p>
+                <p>
+                  <label for="password">Password</label>
+                  <input type="text" name="password" id="password">
+                </p>
+                <p>
+                  <input type="submit" value="Login" class="base-btn">
+                </p>
+              </form>
+              
+              <h3>Create New Account</h3>
+              <form method="post" action="/newacc">
+                <p>
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username">
+                </p>
+                <p>
+                  <label for="password">Password</label>
+                  <input type="text" name="password" id="password">
+                </p>
+                <p>
+                  <input type="submit" value="Create new account" class="base-btn">
+                </p>
+              </form>
+        </div>
+    </body>
+</html>

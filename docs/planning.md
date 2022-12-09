@@ -1,4 +1,4 @@
-A detailed breakdown of our planning process.
+A detailed breakdown of our planning process. Throughout the course of the project, we updated each other on GroupMe and held meetings on Zoom. 
 
 ## Meeting 1: 11/20 @ 7PM
 [Link to discussion post](https://github.com/orgs/comp426-2022-fall/teams/group-31/discussions/2)
@@ -24,6 +24,7 @@ Assigning out roles for major components of the project:
 * server.js and API Backend - Shriya
 * Databases - Lesli
 * Frontend - Ryan
+* More information on these roles can be found in the roles.md document
 * Documentation and Demo Video - all shared, whoever works on a component can add the documentation
 
 Other Notes:
@@ -34,7 +35,7 @@ Other Notes:
 
 ## Meeting 3: 12/06 @ 7PM
 * Dicussed finished backend and Shriya showed a demo of how to use the API 
-* Lesli and Ryan now be working on database and frontend until Thursday afternoon
+* Lesli and Ryan now be working on database and frontend until Thursday afternoon 
 * Looked at further requirements for the project and what we need to add to our API and frontend
 * Will be doing documentation and demo video on final meeting Thursday 12/08
 
@@ -43,6 +44,7 @@ This was an unscheduled meeting we decided to have to update each other on the p
 * Mitigated issues with styling not showing up
 * Discussed features we would add to the database, such as username, password, logs of interactions
 * Discussed pages to be added to the frontend and how we would request information from the API from the frontend
+* Discussed any changes needed to be made to the API from how we had originally done it
 
 ## Meeting 4: 12/08 @ 3pm
 This is the final meeting for our team. Going into this meeting, we were mostly done with the technical aspects of the project, and only needed to fix a couple of things. 
@@ -52,3 +54,4 @@ This is the final meeting for our team. Going into this meeting, we were mostly 
 * Added comments for each of our code
 * Tested out the application and made sure we met the rubric on each criteria
 * Filmed demo video
+* Meeting finished with PR made and README updated.

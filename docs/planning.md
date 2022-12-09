@@ -39,14 +39,14 @@ Other Notes:
 * Looked at further requirements for the project and what we need to add to our API and frontend
 * Will be doing documentation and demo video on final meeting Thursday 12/08
 
-## Meeting 3: 12/07 @ 10PM
+## Meeting 4: 12/07 @ 10PM
 This was an unscheduled meeting we decided to have to update each other on the progress of each of our components, as well as figure out any issues with the database or frontend.
 * Mitigated issues with styling not showing up
 * Discussed features we would add to the database, such as username, password, logs of interactions
 * Discussed pages to be added to the frontend and how we would request information from the API from the frontend
 * Discussed any changes needed to be made to the API from how we had originally done it
 
-## Meeting 4: 12/08 @ 3pm
+## Meeting 5: 12/08 @ 3pm
 This is the final meeting for our team. Going into this meeting, we were mostly done with the technical aspects of the project, and only needed to fix a couple of things. 
 * Solved some issues such as the database not deleting users properly, added form to change username and password
 * Connected frontend to backend and databases properly  
